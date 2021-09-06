@@ -1,9 +1,11 @@
-image: gitpod/workspace-full
+image:
+  file: .gitpod.Dockerfile
 
 tasks:
   - init: go get -v -t -d ./...
+  - init: dep ensure
 
 vscode:
   extensions:
-    - golang.go    
-    - ethan-reesor.vscode-go-test-adapter
+    - golang.go
+    - ethan-reesor.vscode-go-test-adapter    
